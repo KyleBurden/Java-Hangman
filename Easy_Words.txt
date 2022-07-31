@@ -1,0 +1,15 @@
+bear
+cat
+dog
+rat
+quiz
+book
+apple
+ball
+look
+hat
+bat
+snack
+cookie
+frog
+clouds
