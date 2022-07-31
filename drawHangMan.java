@@ -82,7 +82,7 @@ public class drawHangMan {
         }
         
 
-        if else (wrong_Guesses == 7) {
+        else if (wrong_Guesses == 7) {
             System.out.println("   _________");
             System.out.println("   |      _|_");
             System.out.println("   |       0");
