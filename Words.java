@@ -7,31 +7,25 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Words {
-    ArrayList<String> easyWords = new ArrayList<String>();
-
-    public static void main(String[] args){
-
-
-
-    }
+    
     public static ArrayList<String> chooseDiff(String diffChoice) throws FileNotFoundException {
-        File theFile = new File("Easy_Words");
+        File theFile = new File("Easy_Words.txt");
         Scanner file = new Scanner(theFile);
         ArrayList<String> easyWords = new ArrayList<String>();
         while (file.hasNext()) {
             easyWords.add(file.nextLine());
         }
-        File theFile2 = new File("Medium_Words");
+        File theFile2 = new File("Medium_Words.txt");
         Scanner file2 = new Scanner(theFile2);
         ArrayList<String> mediumWords = new ArrayList<String>();
         while (file2.hasNext()) {
             mediumWords.add(file2.nextLine());
         }
-        File theFile3 = new File("Hard_Words");
+        File theFile3 = new File("Hard_Words.txt");
         Scanner file3 = new Scanner(theFile3);
         ArrayList<String> hardWords = new ArrayList<String>();
         while (file3.hasNext()) {
-            mediumWords.add(file3.nextLine());
+            hardWords.add(file3.nextLine());
         }
 
 
