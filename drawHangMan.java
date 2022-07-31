@@ -9,7 +9,7 @@ public class drawHangMan {
         // Hangman art will change this is just a placeholder for testing reasons.
         int wrong_Guesses = 0;
         
-        if (wrong_Guesses ==0;{
+        if (wrong_Guesses == 0){
             System.out.println("   _________");
             System.out.println("   |      _|_");
             System.out.println("   | ")
