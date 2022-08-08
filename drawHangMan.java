@@ -6,9 +6,6 @@ public class drawHangMan {
     public static void displayHangman() {
         // Variable for amount of wrong guesses. Once the player reaches 7 guesses the game will end and show the word
         //that the player couldn't figure out.
-
-
-        // Hangman art will change this is just a placeholder for testing reasons.
         int wrong_Guesses = 0;
         
         if (wrong_Guesses == 0){
