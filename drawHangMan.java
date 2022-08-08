@@ -1,3 +1,5 @@
+package Hangman
+
 public class drawHangMan {
 
 
@@ -90,8 +92,9 @@ public class drawHangMan {
             System.out.println("   |       |");
             System.out.println("   |      / \\");
             System.out.println("___|___ ");
+            System.out.println("Game over :(");
         }
-        //System.out.println("You could not figure out the word. The word you were trying to guess was:" + guess_word);
+        
 
     }
 
