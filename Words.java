@@ -48,4 +48,12 @@ public class Words {
         String wordRand = theWords.get(ranWord);
         return wordRand;
     }
+     public static String theWord() throws FileNotFoundException {
+        System.out.println("Press 1 for easy, 2 for medium, 3 for hard.");
+        Scanner scan = new Scanner(System.in);
+        int userChoice = scan.nextInt();
+        ArrayList<String> words = chooseDiff(userChoice);
+        String wordToGuess = getTheWord(words);
+        return wordToGuess;
+    }
 }
