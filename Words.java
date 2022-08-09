@@ -7,6 +7,11 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Words {
+    private static int wrongGuesses = 0;
+
+    public static int getWrongGuesses() {
+        return wrongGuesses;
+    }
     
     public static ArrayList<String> chooseDiff(String diffChoice) throws FileNotFoundException {
         File theFile = new File("Easy_Words.txt");
@@ -56,4 +61,55 @@ public class Words {
         String wordToGuess = getTheWord(words);
         return wordToGuess;
     }
+    
+    public static String wordState(List<Character> allRightGuesses, String theWord){
+        String wordsState ="";
+        for (char letters :theWord.toCharArray()) {
+            if (allRightGuesses.contains(letters)) {
+                wordsState += String.format("%c", letters);
+            } else {
+                 wordsState += "_";
+            }
+
+        }
+           return wordsState;
+    }
+    
+    
+    public static void hang (String guess, String wordToGuess, String underscore, ArrayList < String > allWrongGuesses, ArrayList < String > allRightGuesses) throws
+                IOException, UnsupportedAudioFileException, LineUnavailableException {
+            String newunderscore = "";
+            for (int i = 0; i < wordToGuess.length(); i++) {
+
+                if (wordToGuess.charAt(i) == guess.charAt(0)) {
+                    newunderscore += guess.charAt(0);
+                } else if (underscore.charAt(i) != '_') {
+                    newunderscore += wordToGuess.charAt(i);
+                } else {
+                    newunderscore += "_";
+                }
+
+            }
+
+            if (underscore.equals(newunderscore)) {
+                wrongGuesses++;
+                displayHangman(wrongGuesses);
+                System.out.println("Sorry :( Incorrect guess!");
+                soundEffects.incorrectSoundEffect();
+                System.out.println("Wrong Guesses:");
+                for (String theWrongGuess : allWrongGuesses) {
+                    System.out.print(theWrongGuess + " ");
+
+                }
+            } else {
+                soundEffects.correctSoundEffect();
+                underscore = newunderscore;
+            }
+            if (underscore.equals(wordToGuess)) {
+                System.out.println("You have solved the word. It was " + wordToGuess);
+            }
+
+        }
+
+        
 }
