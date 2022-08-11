@@ -1,4 +1,4 @@
-package Hangman
+package Hangman;
 
 public class drawHangMan {
 
