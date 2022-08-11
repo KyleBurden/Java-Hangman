@@ -1,11 +1,14 @@
 package Hangman;
 
-import java.util.Scanner;
-import java.io.FileNotFoundException;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import static Hangman.Words.*;
+import static Hangman.DrawMan.displayHangman;
 
-import static Hangman.Words.chooseDiff;
-import static Hangman.Words.getTheWord;
 
 
 public class Main {
@@ -25,7 +28,9 @@ public class Main {
             System.out.println("=========================================");
             System.out.println("Welcome to our Hangman Game!");
             System.out.println("Created by Kyle Burden and Adam Barry");
+            //next line calls theWord()... It will ask for 1, 2 or 3 to pick the word difficulty
             String hiddenWord = theWord();
+            //the word replaced with all underscores
             String underscore = new String(new char[hiddenWord.length()]).replace("\0", "_");
             displayHangman(0);
             System.out.println(underscore);
@@ -33,6 +38,8 @@ public class Main {
             ArrayList<String> allRightGuesses = new ArrayList<>();
             List<Character> allGuesses = new ArrayList<>();
 
+            
+            //game will run util user has 7 wrong guesses
             while (Words.getWrongGuesses() < 7) {
                 backgroundMusic.backgroundSound();
                 Scanner guess = new Scanner(System.in);
@@ -60,17 +67,22 @@ public class Main {
 
             }
 
+           //condition to see if you lose
+            if (Words.getWrongGuesses() == 7){
+                System.out.println("__  __   ______   __  __       __       ______   ______   ______      \n" +
+                        "/_/\\/_/\\ /_____/\\ /_/\\/_/\\     /_/\\     /_____/\\ /_____/\\ /_____/\\     \n" +
+                        "\\ \\ \\ \\ \\\\:::_ \\ \\\\:\\ \\:\\ \\    \\:\\ \\    \\:::_ \\ \\\\::::_\\/_\\::::_\\/_    \n" +
+                        " \\:\\_\\ \\ \\\\:\\ \\ \\ \\\\:\\ \\:\\ \\    \\:\\ \\    \\:\\ \\ \\ \\\\:\\/___/\\\\:\\/___/\\   \n" +
+                        "  \\::::_\\/ \\:\\ \\ \\ \\\\:\\ \\:\\ \\    \\:\\ \\____\\:\\ \\ \\ \\\\_::._\\:\\\\::___\\/_  \n" +
+                        "    \\::\\ \\  \\:\\_\\ \\ \\\\:\\_\\:\\ \\    \\:\\/___/\\\\:\\_\\ \\ \\ /____\\:\\\\:\\____/\\ \n" +
+                        "     \\__\\/   \\_____\\/ \\_____\\/     \\_____\\/ \\_____\\/ \\_____\\/ \\_____\\/ ");
+                System.out.println("The word was " + hiddenWord);
+            }
+
+            //To see if user wants to play again
             Scanner continueScan = new Scanner(System.in);
             System.out.println();
             System.out.println("Type yes to play again...");
-            System.out.println("__  __   ______   __  __       __       ______   ______   ______      \n" +
-                    "/_/\\/_/\\ /_____/\\ /_/\\/_/\\     /_/\\     /_____/\\ /_____/\\ /_____/\\     \n" +
-                    "\\ \\ \\ \\ \\\\:::_ \\ \\\\:\\ \\:\\ \\    \\:\\ \\    \\:::_ \\ \\\\::::_\\/_\\::::_\\/_    \n" +
-                    " \\:\\_\\ \\ \\\\:\\ \\ \\ \\\\:\\ \\:\\ \\    \\:\\ \\    \\:\\ \\ \\ \\\\:\\/___/\\\\:\\/___/\\   \n" +
-                    "  \\::::_\\/ \\:\\ \\ \\ \\\\:\\ \\:\\ \\    \\:\\ \\____\\:\\ \\ \\ \\\\_::._\\:\\\\::___\\/_  \n" +
-                    "    \\::\\ \\  \\:\\_\\ \\ \\\\:\\_\\:\\ \\    \\:\\/___/\\\\:\\_\\ \\ \\ /____\\:\\\\:\\____/\\ \n" +
-                    "     \\__\\/   \\_____\\/ \\_____\\/     \\_____\\/ \\_____\\/ \\_____\\/ \\_____\\/ ");
-            System.out.println("The word was " + hiddenWord);
             continueGame2 = continueScan.nextLine();
 
 
