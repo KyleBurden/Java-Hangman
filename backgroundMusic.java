@@ -2,12 +2,12 @@ package Hangman
 
 import javax.sound.sampled.*;
 import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
-
 
 public class backgroundMusic {
 
+    
+    //This will play our background music continuously
+    //Sound may be loud lol******
     public static void backgroundSound() {
 
         try{
