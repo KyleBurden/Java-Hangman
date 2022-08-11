@@ -5,7 +5,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.util.*;
 import java.io.*;
 
-import static Hangman.DrawMan.displayHangman;
+import static Hangman.drawHangMan.displayHangman;
 
 public class Words {
     private static int wrongGuesses = 0;
