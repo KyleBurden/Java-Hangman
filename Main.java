@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import static Hangman.Words.*;
-import static Hangman.DrawMan.displayHangman;
+import static Hangman.drawHangMan.displayHangman;
 
 
 
