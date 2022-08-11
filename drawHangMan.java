@@ -4,7 +4,7 @@ public class drawHangMan {
 
     
     //Our ascii art which will display after each wrong guess
-    public static void displayHangman(int wrong_guesses) {
+    public static void displayHangman(int wrong_Guesses) {
         
         if (wrong_Guesses == 0){
             System.out.println("   _________");
