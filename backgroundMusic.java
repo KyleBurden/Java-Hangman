@@ -1,4 +1,4 @@
-package Hangman
+package Hangman;
 
 import javax.sound.sampled.*;
 import java.io.File;
