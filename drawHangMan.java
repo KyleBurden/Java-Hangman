@@ -11,7 +11,7 @@ public class drawHangMan {
         if (wrong_Guesses == 0){
             System.out.println("   _________");
             System.out.println("   |      _|_");
-            System.out.println("   | ")
+            System.out.println("   | ");
             System.out.println("   | ");
             System.out.println("   | ");
             System.out.println("___|___");     
