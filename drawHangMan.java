@@ -2,11 +2,9 @@ package Hangman;
 
 public class drawHangMan {
 
-
-    public static void displayHangman() {
-        // Variable for amount of wrong guesses. Once the player reaches 7 guesses the game will end and show the word
-        //that the player couldn't figure out.
-        int wrong_Guesses = 0;
+    
+    //Our ascii art which will display after each wrong guess
+    public static void displayHangman(int wrong_guesses) {
         
         if (wrong_Guesses == 0){
             System.out.println("   _________");
