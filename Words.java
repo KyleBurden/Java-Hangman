@@ -66,7 +66,7 @@ public class Words {
         System.out.println("Press 1 for easy, 2 for medium, 3 for hard.");
         Scanner scan = new Scanner(System.in);
         try{
-           int userChoice = scan.nextInt();
+           String userChoice = scan.next();
             ArrayList<String> words = chooseDiff(userChoice);
             String wordToGuess = getTheWord(words);
             return wordToGuess;
