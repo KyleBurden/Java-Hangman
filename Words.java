@@ -120,7 +120,7 @@ public class Words {
             if (underscore.equals(newunderscore)) {
                 wrongGuesses++;
                 displayHangman(wrongGuesses);
-                System.out.println("Sorry :( Incorrect guess!");
+                System.out.println("Sorry :( Incorrect guess!" + " Guesses left: " + (7 - wrongGuesses));
                 soundEffects.incorrectSoundEffect();
                 System.out.println("Wrong Guesses:");
                 for (String theWrongGuess : allWrongGuesses) {
