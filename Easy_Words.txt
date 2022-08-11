@@ -13,3 +13,13 @@ snack
 cookie
 frog
 clouds
+hawk
+sock
+gull
+toad
+note
+boat
+tear
+bear
+pope
+hope
